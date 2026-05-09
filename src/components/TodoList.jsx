@@ -106,7 +106,7 @@ export default function TodoList() {
 
 
   useEffect(() => {
-    const saved = localStorage.getItem("todos");
+    const saved = localStorage.getItem("todos") ?? [];
     if (saved) {
         setTodos(JSON.parse(saved));
     //   const storedTodos = localStorage.setItem("todos", JSON.stringify(todos)); //JSON is a library in js
