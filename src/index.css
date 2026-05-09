@@ -1,0 +1,36 @@
+/* @tailwind base;
+@tailwind utilities;
+@tailwind components; */
+
+@import "tailwindcss";
+
+.icon-button {
+  transition: all 0.2s !important;
+}
+
+.icon-button:hover {
+  /* background-color: #c5c5c571 !important; */
+  box-shadow: 0px 7px 7px rgba(0,0,0,0.4);
+}
+
+.todo-card  {
+  transition: all 0.2s !important;
+}
+
+.todo-card:hover{
+  /* padding-bottom: 1px; */
+  /* padding-top: 1px; */
+  box-shadow: 0px 7px 7px rgba(0,0,0,0.4);
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/public/fonts/Rubik-Regular.ttf");
+  font-weight: "normal";
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/public/fonts/Rubik-Regular.ttf");
+  font-weight: "bold";
+}
