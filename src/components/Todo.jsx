@@ -5,10 +5,14 @@ import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutl
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import DeleteDialog from "./DeleteDialog";
 import UpdateDialog from './UpdateDialog'
+import FlagIcon from '@mui/icons-material/Flag';
+import { PRIORITY_COLORS } from '../config/priorities';
 
 export default function Todo({ todo, setTodos, todoIdToDelete, setTodoIdToDelete
 }) {
     const [showUpdateDialog, setShowUpdateDialog] = useState(false);
+    const priorityColor = PRIORITY_COLORS[todo.priority] || PRIORITY_COLORS["none"];
+    
 
     // function handleCheckTodo() {
     // setTodos((prevTodo) => prevTodo.map(t => (t.id == todo.id) ? { ...t, isCompleted: !t.isCompleted } : t));
@@ -32,10 +36,10 @@ export default function Todo({ todo, setTodos, todoIdToDelete, setTodoIdToDelete
                 <CardContent >
                     <Grid container spacing={0} >
                         <Grid item xs={8} sx={{ width: "60%" }}>
-                            <Typography variant="h5" sx={{ mb: 1, textDecoration: todo.isCompleted ? "line-through" : "none" }}>
-                                
+                            <Typography variant="h5" sx={{ fontWeight: "bold", color: "secondary.contrastText", display: "flex", alignItems: "center", mb: 1, textDecoration: todo.isCompleted ? "line-through" : "none" }}>
+                                <FlagIcon style={{color: priorityColor,  marginRight: "6px", fontSize: "2rem"}} />
                                 {todo.title}</Typography>
-                            <Typography variant="h6" sx={{ fontSize: "14px", color: "info.main", minWidth: "330px" }}>{todo.details}</Typography>
+                            <Typography variant="h6" sx={{color: "secondary.contrastText", fontSize: "14px",  minWidth: "330px" }}>{todo.details}</Typography>
                         </Grid>
                         <Grid item xs={4} sx={{ width: "40%", display: "flex", justifyContent: "end", alignItems: "center", gap: "5px" }}>
                             <IconButton

@@ -3,8 +3,7 @@ import TodoList from "./components/TodoList";
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 import { TodosContext } from "./contexts/todosContext";
 import { useEffect, useState } from "react"
-import { v4 as uuidv4 } from "uuid";
-
+import { InitialTodos} from "./data/initialTodos"
 
 const theme = createTheme({
   typography: {
@@ -14,11 +13,13 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#72BAA9", //093C5D
+      main: "#2C687B", //093C5D 72BAA9
       // dark: "#3454FA"
+      contrastText: "#FFF"
     },
     secondary: {
-      main: "#934761" //3B7597 
+      main: "#8CC7C4", //3B7597  934761
+      contrastText: "#333"
     },
     success: {
       main: "#67C090"
@@ -28,31 +29,9 @@ const theme = createTheme({
     },
     info: {
       main: "#D5E7B5"
-    },
-    // third color: #F8C463
+    }
   }
 })
-
-const InitialTodos = [
-  {
-    id: uuidv4(),
-    title: "Read a book",
-    details: "Finish 50 pages of 'Atomic Habits' by James Clear",
-    isCompleted: false
-  },
-  {
-    id: uuidv4(),
-    title: "Grocery shopping",
-    details: "Buy vegetables, eggs, milk, and chicken for the week",
-    isCompleted: false
-  },
-  {
-    id: uuidv4(),
-    title: "Morning workout",
-    details: "30-min jog + 15-min stretching routine",
-    isCompleted: false
-  },
-];
 
 export default function App() {
   // const [allTodos, setTodos] = useState(() => {
