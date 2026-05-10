@@ -1,7 +1,7 @@
 import "./index.css"
 import TodoList from "./components/TodoList";
 import { createTheme, ThemeProvider } from "@mui/material/styles"
-import { TodosContext } from "./contexts/todosContext";
+import { TodosContext } from "./contexts/TodosContext";
 import { useEffect, useState } from "react"
 import { InitialTodos} from "./data/initialTodos"
 
