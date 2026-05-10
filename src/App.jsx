@@ -42,7 +42,22 @@ export default function App() {
   // return InitialTodos; // Fallback to default
   // });
 
-  const [allTodos, setTodos] = useState(InitialTodos);
+  const [allTodos, setTodos] = useState(() => {
+      const saved = localStorage.getItem("todos");
+
+      if(saved)
+      {
+        try {
+          return JSON.parse(saved)
+        } catch(error)
+        {
+          console.error("Failed to parse todos from local storage", error);
+          return InitialTodos;
+        }
+      }
+
+      return InitialTodos;
+  });
 
   return (
     <ThemeProvider theme={theme}>

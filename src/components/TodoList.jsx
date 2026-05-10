@@ -113,17 +113,7 @@ export default function TodoList() {
       // setTodos(storedTodos);
     }
   }, []);
-
-  useEffect(() => {
-  const saved = localStorage.getItem("todos");
-  if (saved) {
-    try {
-      setTodos(JSON.parse(saved));
-    } catch (e) {
-      console.error("Invalid JSON in localStorage");
-    }
-  }
-}, []);
+  
 
   return (
     <>
