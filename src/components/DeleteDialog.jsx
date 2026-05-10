@@ -5,7 +5,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import { useContext } from 'react';
-import { TodosContext } from '../contexts/todosContext';
+import { TodosContext } from '../contexts/TodosContext';
 
 export default function DeleteDialog({
     todo, isClearAll = false,

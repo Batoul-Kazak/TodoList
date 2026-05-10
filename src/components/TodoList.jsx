@@ -15,7 +15,7 @@ import Todo from "./Todo";
 import { Grid } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { TodosContext } from "../contexts/todosContext";
+import { TodosContext } from "../contexts/TodosContext";
 import { v4 as uuidv4 } from "uuid";
 import DeleteDialog from "./DeleteDialog";
 import UpdateDialog from "./UpdateDialog";
